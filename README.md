@@ -45,4 +45,36 @@ This ensures type safety — it can’t access a property that doesn’t exist. 
   Enhances flexibility and reusability in type-safe generic functions and components.
 ### Conclusion
 For building reusable, type-safe utilities in TypeScript, keyof is a must-have in your toolkit. It helps to write robust and maintainable code by tightly coupling objects with their property types.
+##
+
+## POST 2: What is Type Inference in TypeScript and Why it is helpful?
+### What is Type Inference?
+Type inference is TypeScript's ability to automatically determine the type of a variable, parameter, or return value based on its value or context — without the developer explicitly specifying the type.
+
+### Basic Example
+**Example 1**
+```ts
+let message = "Hello, world!";
+message = 42; // ❌ Error: Type 'number' is not assignable to type 'string'
+```
+In this example we didn't write `:string`,however Typescript infers that `message` as `string` type. 
+Therefore, when we try to assign a number it give error.
+**Example 2**
+```ts
+function add(a = 5, b = 10) {
+  return a + b;
+}
+// TypeScript infers: (a?: number, b?: number) => number
+
+```
+In this example, initialization infers `number` and function return sum of `numbers`.
+
+### Why inference is useful:
+- **Less typing, more coding: Reduces the need for explicit type annotations, speeding up development.**
+- **Cleaner code: Eliminates redundant type declarations while preserving type safety.**
+- **Enhanced IDE support: Features like IntelliSense still provide accurate code suggestions and error detection.**
+
+### Conclusion
+TypeScript’s type inference is like an intelligent assistant—it works quietly in the background to keep your code safe and clean. This is useful for our productivity.
+
   
